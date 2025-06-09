@@ -1,11 +1,10 @@
-<<<<<<< HEAD
+
 @font-face {
     font-family: "Kantumruy Pro";
     src: url('font/KantumruyPro-Regular.ttf') format('truetype');
 }
 
-/* Reset */
-/* Base Reset */
+
 body,
 html {
   margin: 0;
@@ -16,10 +15,11 @@ html {
 
 /* Desktop Background */
 body {
-  background-image: url('image/main-bg-desktop.png'); /* Your path */
+  background-image: url('image/t168-main-bg-desktop.png'); /* Your path */
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
+   font-family: "Kantumruy Pro";
 }
 
 /* Main Image Styling */
@@ -48,7 +48,7 @@ body {
 /* Responsive Mobile View */
 @media screen and (max-width: 576px) {
   body {
-    background-image: url('image/main-bg.png'); /* Your path for mobile */
+    background-image: url('image/t168-main-bg.png'); /* Your path for mobile */
   }
 
   .register-img {
@@ -107,12 +107,23 @@ body {
 /* Social Media Links */
 .social-links {
   position: fixed;
-  bottom: 50px; /* Bottom of screen */
-  width: 100%;
+  top: 60px; /* lowered from 20px */
+  right: 20px;
   display: flex;
-  justify-content: center;
-  gap: 15px;
-  z-index: 8;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 99;
+}
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.3);
+  }
 }
 
 .social-icon {
@@ -126,6 +137,7 @@ body {
   justify-content: center;
   text-decoration: none;
   transition: transform 0.3s ease;
+  animation: glow 2s infinite ease-in-out;
 }
 
 .social-icon:hover {
@@ -143,150 +155,161 @@ body {
 
 .social-icon.web {
   background-color: #474040; /* Website dark gray */
-=======
-@font-face {
-    font-family: "Kantumruy Pro";
-    src: url('font/KantumruyPro-Regular.ttf') format('truetype');
 }
 
-/* Reset */
-/* Base Reset */
-body,
-html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: "Kantumruy Pro", sans-serif;
-}
-
-/* Desktop Background */
-body {
-  background-image: url('image/main-bg-desktop.png'); /* Your path */
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100% 100%;
-}
-
-/* Main Image Styling */
-.promotion_150 {
-  width: 300px;
-}
-
-/* Fixed Register Image */
-.register-img {
+.register-btn-container {
   position: fixed;
-  bottom: 130px;
+  bottom: 90px; /* Lower than before (was 130px) */
   width: 100%;
   display: flex;
   justify-content: center;
-}
-
-/* Fixed Contact/Register Buttons */
-.contact-resiter {
-  position: fixed;
-  bottom: 70px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-/* Responsive Mobile View */
-@media screen and (max-width: 576px) {
-  body {
-    background-image: url('image/main-bg.png'); /* Your path for mobile */
-  }
-
-  .register-img {
-    bottom: 200px;
-  }
-
-  .contact-resiter {
-    bottom: 130px;
-  }
-}
-.register-img,
-.contact-resiter {
   z-index: 10;
-}
-
-/* Up and down */
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
-}
-
-.promotion_150 {
-  animation: float 2s ease-in-out infinite;
+  animation: pulse 1.2s ease-in-out infinite;
+    font-family: "Kantumruy Pro";
 }
 
 
-/* Zoomin Zoomout */
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-
-.promotion_150 {
-  animation: pulse 0.8s infinite;
-}
-
-.contact-resiter{
-      animation: pulse 0.8s ease-in-out infinite;
-
-}
-/* Fade */
-/* .promotion_150 {
-  opacity: 0;
-  animation: fadeIn 1s ease forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-} */
-
-/* Social Media Links */
-.social-links {
-  position: fixed;
-  bottom: 50px; /* Bottom of screen */
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  z-index: 8;
-}
-
-.social-icon {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  color: white;
-  font-size: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
+.promotion-btn {
+  font-size: 20px;
+  padding: 14px 30px;
+  background-color: #FFD700;
+  color: #000;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  animation: pulse 1.2s ease-in-out infinite;
   transition: transform 0.3s ease;
 }
 
-.social-icon:hover {
-  transform: scale(1.1);
+.promotion-btn:hover {
+  transform: scale(1.05);
 }
 
-/* Colors */
-.social-icon.fb {
-  background-color: #1877F2; /* Facebook blue */
+@media screen and (max-width: 576px) {
+  .register-btn-container {
+    bottom: 170px; /* slightly lower on mobile too */
+  }
+
+  .promotion-btn {
+    font-size: 16px;
+    padding: 12px 24px;
+  }
 }
 
-.social-icon.telegram {
-  background-color: #0088cc; /* Telegram blue */
+.extra-buttons-row {
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  z-index: 9;
+  animation: pulse 1.2s ease-in-out infinite;
+  font-family: "Kantumruy Pro";
+
 }
 
-.social-icon.web {
-  background-color: #474040; /* Website dark gray */
->>>>>>> b50e69c54bd1bfa9c188af8afce66d9f551b8092
+.extra-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 2px solid white; /* Add white border */
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+.extra-button.red {
+  background-color: #E60000;
+}
+
+.extra-button.draw {
+  background-color: #00A442;
+}
+
+.extra-button.blue {
+  background-color: #00009F;
+}
+
+.extra-button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (max-width: 576px) {
+  .extra-buttons-row {
+    bottom: 120px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .extra-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; 
+  z-index: 100; /* On top */
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.6); /* Black with opacity */
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #07182E;
+  margin: auto;
+  padding: 20px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 300px;  /* never bigger than 300px */
+  box-shadow: 0 0 20px rgba(0,0,0,0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Desktop: smaller width */
+@media (min-width: 768px) {
+  .modal-content {
+    width: 250px; /* smaller width on desktop */
+  }
+}
+
+/* Larger desktops */
+@media (min-width: 1200px) {
+  .modal-content {
+    width: 220px; /* even smaller on big screens */
+  }
+}
+
+/* Close button */
+.close-btn {
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* GIF styling */
+.modal-gif {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
 }
