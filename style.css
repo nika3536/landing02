@@ -259,7 +259,7 @@ body {
 /* 🔽 Fix for iPhone SE and very short-height phones */
 @media screen and (max-height: 670px) {
   .register-btn-container {
-    bottom: 350px;
+    bottom: 380px;
   }
 
   .extra-buttons-row {
