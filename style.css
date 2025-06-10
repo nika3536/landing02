@@ -296,7 +296,7 @@ body {
   position: relative;
   background-color: #07182E;
   margin: auto;
-  padding: 20px;
+  padding: 5px;
   border-radius: 20px;
   width: 90%;
   max-width: 300px;  /* never bigger than 300px */
@@ -322,12 +322,12 @@ body {
 
 /* Close button */
 .close-btn {
-  color: white;
+  color: black;
   font-size: 28px;
   font-weight: bold;
   position: absolute;
-  right: 15px;
-  top: 10px;
+  right: 10px;
+  top: 0px;
   cursor: pointer;
   user-select: none;
 }
@@ -337,4 +337,11 @@ body {
   width: 100%;
   height: auto;
   border-radius: 12px;
+}
+.modal-video {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
 }

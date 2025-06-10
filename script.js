@@ -70,3 +70,12 @@ window.onclick = function(event) {
       });
     }, interval);
   })();
+
+  document.getElementById("openModalBtn").addEventListener("click", function () {
+  const modal = document.getElementById("myModal");
+  const video = document.getElementById("modalVideo");
+
+  modal.style.display = "flex";
+  video.currentTime = 0;
+  video.play(); // With sound
+});
