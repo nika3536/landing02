@@ -260,11 +260,11 @@ body {
 /* 🔽 Special Fix for iPhone XS / XS Max (shorter screen height) */
 @media screen and (max-height: 900px) and (max-width: 430px) {
   .register-btn-container {
-    bottom: 440px; /* lower than iPhone 14 Pro Max */
+    bottom: 400px; /* lower than iPhone 14 Pro Max */
   }
 
   .extra-buttons-row {
-    bottom: 390px;
+    bottom: 350px;
   }
 }
 
