@@ -15,7 +15,7 @@ html {
 
 /* Desktop Background */
 body {
-  background-image: url('image/t168-main-bg-desktop.png'); /* Your path */
+  background-image: url('image/free-cock-popup-t168-dt.jpg'); /* Your path */
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
@@ -48,7 +48,7 @@ body {
 /* Responsive Mobile View */
 @media screen and (max-width: 576px) {
   body {
-    background-image: url('image/t168-main-bg.png'); /* Your path for mobile */
+    background-image: url('image/free-cock-popup-t168-m.jpg'); /* Your path for mobile */
   }
 
   .register-img {
