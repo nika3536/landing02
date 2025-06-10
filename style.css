@@ -256,18 +256,17 @@ body {
     padding: 10px 20px;
   }
 }
-
-/* 🔽 Special Fix for iPhone XS / XS Max (shorter screen height) */
-@media screen and (max-height: 900px) and (max-width: 430px) {
+/* ✅ Special Fix for iPhone XS Max Only (414 x 896 with 19.5:9 ratio) */
+/* 🔽 Special Fix for iPhone SE and similar short-height devices */
+@media screen and (max-height: 670px) {
   .register-btn-container {
-    bottom: 400px; /* lower than iPhone 14 Pro Max */
+    bottom: 380px; /* push lower */
   }
 
   .extra-buttons-row {
-    bottom: 350px;
+    bottom: 320px; /* push lower */
   }
 }
-
 
 .modal {
   display: none; /* Hidden by default */
