@@ -256,18 +256,29 @@ body {
     padding: 10px 20px;
   }
 }
-/* ✅ Special Fix for iPhone XS Max Only (414 x 896 with 19.5:9 ratio) */
-/* 🔽 Special Fix for iPhone SE and similar short-height devices */
+/* 🔽 Fix for iPhone SE and very short-height phones */
 @media screen and (max-height: 670px) {
   .register-btn-container {
-    bottom: 380px; /* push lower */
+    bottom: 380px;
   }
 
   .extra-buttons-row {
-    bottom: 320px; /* push lower */
+    bottom: 320px;
   }
 }
 
+/* 🔽 Fix for iPhone 6/7/8 Plus (414 x 736) without affecting SE */
+@media screen and (max-height: 740px) and (min-height: 671px) {
+  .register-btn-container {
+    bottom: 360px;
+  }
+
+  .extra-buttons-row {
+    bottom: 300px;
+  }
+}
+
+}
 .modal {
   display: none; /* Hidden by default */
   position: fixed; 
