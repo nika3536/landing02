@@ -168,19 +168,18 @@ body {
 
 .register-btn-container {
   position: fixed;
- bottom: calc(500px + env(safe-area-inset-bottom));
+  bottom: 550px;
   width: 100%;
   display: flex;
   justify-content: center;
   z-index: 10;
   animation: pulse 1.2s ease-in-out infinite;
-    font-family: "Kantumruy Pro";
+  font-family: "Kantumruy Pro";
 }
 
-
 .promotion-btn {
-   font-size: 24px; /* bigger text */
-  padding: 18px 36px; /* more padding */
+  font-size: 22px; /* Bigger font */
+  padding: 16px 34px; /* More padding */
   background-color: #FFD700;
   color: #000;
   border: none;
@@ -196,50 +195,36 @@ body {
   transform: scale(1.05);
 }
 
-@media screen and (max-width: 576px) {
-  .register-btn-container {
-   bottom: calc(460px + env(safe-area-inset-bottom));
-  }
-
-  .promotion-btn {
-   font-size: 20px;
-    padding: 16px 28px;
-  }
-}
-
 .extra-buttons-row {
   position: fixed;
-  bottom: calc(450px + env(safe-area-inset-bottom));
+  bottom: 480px;
   width: 100%;
   display: flex;
   justify-content: center;
-  gap: 5px;
+  gap: 8px;
   z-index: 9;
   animation: pulse 1.2s ease-in-out infinite;
   font-family: "Kantumruy Pro";
-
 }
 
 .extra-button {
-  padding: 14px 26px;
+  padding: 12px 24px; /* Slightly larger */
   font-size: 18px;
-  border: 2px solid white; /* Add white border */
+  border: 2px solid white;
   border-radius: 10px;
   color: white;
   font-weight: bold;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .extra-button.red {
   background-color: #E60000;
 }
-
 .extra-button.draw {
   background-color: #00A442;
 }
-
 .extra-button.blue {
   background-color: #00009F;
 }
@@ -249,18 +234,40 @@ body {
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
 }
 
+/* 🔽 Normal Mobile View (like iPhone 14 Pro Max) */
 @media screen and (max-width: 576px) {
+  .register-btn-container {
+    bottom: 500px;
+  }
+
+  .promotion-btn {
+    font-size: 18px;
+    padding: 14px 28px;
+  }
+
   .extra-buttons-row {
-       bottom: calc(410px + env(safe-area-inset-bottom));
+    bottom: 440px;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 6px;
   }
 
   .extra-button {
-      font-size: 16px;
-    padding: 12px 20px;
+    font-size: 16px;
+    padding: 10px 20px;
   }
 }
+
+/* 🔽 Special Fix for iPhone XS / XS Max (shorter screen height) */
+@media screen and (max-height: 740px) and (max-width: 576px) {
+  .register-btn-container {
+    bottom: 470px; /* lower than iPhone 14 Pro Max */
+  }
+
+  .extra-buttons-row {
+    bottom: 410px;
+  }
+}
+
 
 .modal {
   display: none; /* Hidden by default */
@@ -321,40 +328,4 @@ body {
   width: 100%;
   height: auto;
   border-radius: 12px;
-}
-
-.congrats-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.85);
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  animation: fadeOut 3s ease-in-out forwards;
-  animation-delay: 2.5s;
-}
-
-.confetti-box {
-  font-size: 28px;
-  font-weight: bold;
-  text-align: center;
-  animation: popUp 1s ease-out;
-}
-
-@keyframes popUp {
-  0% { transform: scale(0); opacity: 0; }
-  60% { transform: scale(1.2); opacity: 1; }
-  100% { transform: scale(1); }
-}
-
-@keyframes fadeOut {
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
 }
