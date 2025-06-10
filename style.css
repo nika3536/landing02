@@ -168,7 +168,7 @@ body {
 
 .register-btn-container {
   position: fixed;
-  bottom: 160px; /* Lower than before (was 130px) */
+  bottom: 540px; /* Lower than before (was 130px) */
   width: 100%;
   display: flex;
   justify-content: center;
@@ -198,7 +198,7 @@ body {
 
 @media screen and (max-width: 576px) {
   .register-btn-container {
-    bottom: 170px; /* slightly lower on mobile too */
+    bottom: 500px; /* slightly lower on mobile too */
   }
 
   .promotion-btn {
@@ -209,7 +209,7 @@ body {
 
 .extra-buttons-row {
   position: fixed;
-  bottom: 100px;
+  bottom: 480px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -251,7 +251,7 @@ body {
 
 @media screen and (max-width: 576px) {
   .extra-buttons-row {
-    bottom: 120px;
+    bottom: 450px;
     flex-wrap: wrap;
     gap: 8px;
   }
@@ -321,4 +321,40 @@ body {
   width: 100%;
   height: auto;
   border-radius: 12px;
+}
+
+.congrats-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOut 3s ease-in-out forwards;
+  animation-delay: 2.5s;
+}
+
+.confetti-box {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  animation: popUp 1s ease-out;
+}
+
+@keyframes popUp {
+  0% { transform: scale(0); opacity: 0; }
+  60% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
