@@ -1,20 +1,20 @@
-const modal = document.getElementById("myModal");
-const openBtn = document.getElementById("openModalBtn");
-const closeBtn = document.getElementById("closeModalBtn");
-const video = document.getElementById("modalVideo");
+  const modal = document.getElementById("myModal");
+  const openBtn = document.getElementById("openModalBtn");
+  const closeBtn = document.getElementById("closeModalBtn");
+  const video = document.getElementById("modalVideo");
 
-// Open modal
-openBtn.onclick = function () {
-  modal.style.display = "flex";
-  video.currentTime = 0;
-  video.play();
-};
+  // Open modal
+  openBtn.onclick = function () {
+    modal.style.display = "flex";
+    video.currentTime = 0;
+    video.play();
+  };
 
-// Close modal by button
-closeBtn.onclick = function () {
-  modal.style.display = "none";
-  video.pause();
-};
+  // Close modal by button
+  closeBtn.onclick = function () {
+    modal.style.display = "none";
+    video.pause();
+  };
 
 // Close modal by clicking outside
 window.onclick = function (event) {
@@ -24,8 +24,9 @@ window.onclick = function (event) {
   }
 };
 
-// Mobile: tapping the video opens Telegram
-video.addEventListener("click", function () {
+// Ensure video click works (mobile-friendly)
+video.addEventListener("click", function (e) {
+  e.stopPropagation(); // Prevent click from bubbling up to window
   window.open("https://t.me/Naga78Kh", "_blank");
 });
 
